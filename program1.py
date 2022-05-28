@@ -55,11 +55,16 @@ print(df)
 df['BloodPressure_rating'].value_counts()
 
 
-# In[27]:
+# In[16]:
 
 
-#threshhold= input("Enter threshhold")
-threshold=0.12
+threshold= float(input("Enter threshhold"))
+print(threshold)
+
+
+# In[17]:
+
+
 count1=len(df[(df.BloodPressure_rating=='Normal')])
 count2=len(df[(df.BloodPressure_rating=='High_stage1')])
 count3=len(df[(df.BloodPressure_rating=='High_stage2')])
@@ -76,21 +81,15 @@ for row in df['BloodPressure_rating']:
     elif row=='Crisis' and threshold>(count4/767): High_occurrence.append('False')
 
 
-# In[28]:
+# In[18]:
 
 
 df['High_occurrence']=High_occurrence
 
 
-# In[31]:
+# In[19]:
 
 
 pd.set_option('display.max_rows', None)
 df
-
-
-# In[ ]:
-
-
-
 
